@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DapperFinal.Models.Student>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+@if (Model == null)
+{
+    <h1> Record Not Found</h1>
+}
+else
+{
+    <h1>Student Table</h1>
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+              Gender
+            </th>
+            <th>
+                Age
+            </th>
+            <th></th>
+        </tr>
+
+
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Gender
+                </td>
+                <td>
+                    @item.Age
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+<p>
+
+    @Html.ActionLink("GO BACK", "BackButtonForMenu", "Route")
+</p>
