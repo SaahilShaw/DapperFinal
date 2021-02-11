@@ -86,23 +86,23 @@ namespace DapperFinal.Controllers
             }
             return View(students);
         }
-        public ActionResult SearchForReturn()
-        {
-            return View();
-        }
-        public ActionResult OutputReturn(int id)
-        {
-            //int id = 2;
-            try
-            {
-                ViewBag.find = db.QueryFirstOrDefault<int>("CheckEmployeeId ", new { Id = id }, commandType: CommandType.StoredProcedure);
-            }
-            catch(Exception e)
-            {
+        //public ActionResult SearchForReturn()
+        //{
+        //    return View();
+        //}
+        //public ActionResult OutputReturn(int id)
+        //{
+        //    //int id = 2;
+        //    try
+        //    {
+        //        ViewBag.find = db.QueryFirstOrDefault<int>("CheckEmployeeId ", new { Id = id }, commandType: CommandType.StoredProcedure);
+        //    }
+        //    catch(Exception e)
+        //    {
 
-            }
-            return View();
-        }
+        //    }
+        //    return View();
+        //}
         public ActionResult MultiList()
         {
             List<StudentSub> students = new List<StudentSub>();
