@@ -1,0 +1,22 @@
+﻿@model DapperFinal.Models.Student
+@if (Model.Id == -1)
+
+{
+    <div class="jumbotron text-center"><h5>No Record Found........</h5></div>
+}
+else
+{
+    <div>
+        <h2>Student</h2>
+        <hr>
+
+        <h3> Student Name:   @Model.Name </h3>
+
+    </div>
+    <p>
+
+        @Html.ActionLink("GO BACK", "BackButton", "Route")
+    </p>
+    @Html.ActionLink("GO BACK TO MENU PAGE", "BackButtonForMenu", "Route")
+
+}

@@ -128,6 +128,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Employ.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentSub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,6 +173,9 @@
     <Content Include="Views\Menu\OutputReturn.cshtml" />
     <Content Include="Views\Menu\MultiList.cshtml" />
     <Content Include="Views\Menu\SearchForReturn.cshtml" />
+    <Content Include="Views\Menu\Union.cshtml" />
+    <Content Include="Views\Menu\SingleRecordView.cshtml" />
+    <Content Include="Views\Menu\SingleRecordForName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

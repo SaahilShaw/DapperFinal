@@ -1,0 +1,23 @@
+﻿
+<html>
+
+<body>
+    <div>
+        <section>
+            
+            @using (Html.BeginForm("SingleRecordForName", "Menu"))
+            {
+                <p style="text-align:center;"> <b style="font-size:130%;">Enter the Employ Id:&nbsp;&nbsp;  </b> <input type="number" name="id" required /> </p> <br />
+
+                <p style="text-align:center;">
+                    <input type="submit" value="Search" /> &nbsp;&nbsp;
+
+                    @Html.ActionLink("GO BACK", "BackButtonForMenu", "Route")
+                </p>
+            }
+        </section>
+    </div>
+
+
+</body>
+</html>

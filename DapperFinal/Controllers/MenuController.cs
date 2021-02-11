@@ -15,6 +15,7 @@ namespace DapperFinal.Controllers
     {
         private IDbConnection db=new SqlConnection(ConfigurationManager.ConnectionStrings["sqlpracticeconn"].ConnectionString);
         // GET: Menu
+        Employ employ=new Employ();
         public ActionResult MenuView()
         {
             return View();
@@ -25,7 +26,7 @@ namespace DapperFinal.Controllers
         }
         public ActionResult SearchResult(int id)
         {
-            Student student = db.QueryFirstOrDefault<Student>("EmployeeGet ", new { id = id }, commandType: CommandType.StoredProcedure);
+            Student student = db.QueryFirstOrDefault<Student>("EmployeeGet ", new { Id = id }, commandType: CommandType.StoredProcedure);
             if (student != null)
             {
                 return View(student);
@@ -38,6 +39,38 @@ namespace DapperFinal.Controllers
             }
 
         }
+        public ActionResult SingleRecordView()
+        {
+            return View();
+        }
+        public ActionResult SingleRecordForName(int id,Student stud)
+        {
+           
+            
+
+            try
+            {
+                stud = db.QueryFirstOrDefault<Student>("SingleValueStudent ", new { id = id }, commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception e)
+            {
+
+            }
+            if (stud != null)
+            {
+                return View(stud);
+            }
+            else
+            {
+                stud = new Student();
+                stud.Id = -1;
+                return View(stud);
+            }
+
+            //return View(stud);
+
+        }
+
         public ActionResult StudTable()
         {
 
@@ -86,7 +119,19 @@ namespace DapperFinal.Controllers
 
         }
 
-        
+       public ActionResult Union()
+        {
+            List<Student> students = new List<Student>();
+            try
+            {
+                students = db.Query<Student>("UnionList", commandType: CommandType.StoredProcedure).ToList();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return View(students);
+        }
 
 
     }
