@@ -1,0 +1,89 @@
+﻿@model DapperFinal.Models.MultiQuery
+
+@using (Html.BeginForm())
+{
+  
+
+
+            <table>
+                <tr>
+                    <th>Subject Id</th>
+                    <th>Subject Name</th>
+                    <th>ID</th>
+                   
+                </tr>
+                @{ int j = 0;
+                    foreach (var item in Model.subject)
+                    {
+
+                        <tr>
+                            <td>
+
+
+                                @item.Subject_id
+                            </td>
+                            <td>
+                                @item.Subject_name
+
+
+                            </td>
+                            <td>
+                                @item.Id
+
+                        </tr>
+
+                        j++;
+                    }
+
+                }
+            </table>
+
+        
+  
+
+
+    
+            <h2>Student </h2>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+                @{ int i = 0;
+                    foreach (var item in Model.students)
+                    {
+
+                                <tr>
+                                    <td>
+
+
+                                        @item.Id
+                                    </td>
+                                    <td>
+                                        @item.Name
+
+
+                                    </td>
+                                    <td>
+                                        @item.Gender
+                                    </td>
+                                    <td>
+                                        @item.Age
+                                    </td>
+                                </tr>
+
+                        i++;
+                    }
+
+                }
+            </table>
+
+    
+ 
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

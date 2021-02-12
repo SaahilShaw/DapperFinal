@@ -15,7 +15,7 @@ namespace DapperFinal.Controllers
     {
         private IDbConnection db=new SqlConnection(ConfigurationManager.ConnectionStrings["sqlpracticeconn"].ConnectionString);
         // GET: Menu
-        Employ employ=new Employ();
+      
         public ActionResult MenuView()
         {
             return View();

@@ -125,13 +125,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\ShowDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employ.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\MasterDetails.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentSub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CustomerRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -176,6 +179,8 @@
     <Content Include="Views\Menu\Union.cshtml" />
     <Content Include="Views\Menu\SingleRecordView.cshtml" />
     <Content Include="Views\Menu\SingleRecordForName.cshtml" />
+    <Content Include="Views\ShowData\MultipleQuery.cshtml" />
+    <Content Include="Views\ShowData\MasterDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

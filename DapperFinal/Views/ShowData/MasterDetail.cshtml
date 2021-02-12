@@ -1,0 +1,100 @@
+﻿
+@model DapperFinal.Models.MasterDetails
+
+
+@using (Html.BeginForm())
+{
+    <h2>Station Master</h2>
+
+    <table class="table table-hover col-md-3">
+
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Customer Type
+            </th>
+            <th>
+                Gender
+            </th>
+
+        </tr>
+
+
+        @{
+            //To make unique Id
+            int i = 0;
+            foreach (var item in Model.CustPersonal)
+            {
+
+                <tr>
+                    <td>
+
+
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.CustomerType
+
+
+                    </td>
+                    <td>
+                        @item.Gender
+                    </td>
+
+                </tr>
+
+                i++;
+            }
+        }
+    </table>
+
+
+
+
+    <table class="table table-condensed table-hover col-md-3">
+        <tr>
+            <th>
+                Country
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                City
+            </th>
+
+        </tr>
+        @{
+            <h2>Region Master</h2>
+            int j = 0;
+            foreach (var item in Model.CustRegions)
+            {
+
+                <tr>
+                    <td>
+
+
+                        @item.Country
+                    </td>
+                    <td>
+                        @item.State
+
+
+                    </td>
+                    <td>
+                        @item.City
+                    </td>
+
+                </tr>
+
+                j++;
+            }
+        }
+    </table>
+
+    <br />
+    @Html.ActionLink("GO BACK", "BackButtonForMenu", "Route")
+
+} 
